@@ -1,0 +1,11 @@
+---
+host1:
+    hostname: 127.0.0.1
+    username: cisco
+    password: cisco
+    port: 9000
+    device_type: cisco_ios_telnet
+    platform: ios
+    global_delay_factor: 2
+
+# platform is what napalm uses for network drivers
