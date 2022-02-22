@@ -1,4 +1,5 @@
 # Perform the required imports
+import logging
 from helpers import nornir_setup
 from nornir_napalm.plugins.tasks import napalm_get
 from nornir_utils.plugins.functions import print_result
@@ -13,7 +14,7 @@ BACKUP_PATH = "./data/configs"
 # Create a Nornir Task.
 def backup_config(task, path):
     # Task 1. Run the NAPALM config getter to collect the config
-    device_config = task.run(task=napalm_get, getters=["get_config"])
+    device_config = task.run(task=napalm_get, getters=["config"])
 
     # Task 2. Write the device config to a file using the Nornir, write_file task
     task.run(
@@ -28,4 +29,4 @@ result = nr.run(
 )
 
 # Finally, we print the results of running our task against all the devices.
-print_result(result, vars=["stdout"])
+print_result(result, vars=["stdout"], severity_level=logging.ERROR)

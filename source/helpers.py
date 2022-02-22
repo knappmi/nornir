@@ -1,6 +1,5 @@
 import os
 from pathlib import Path
-
 from dotenv import load_dotenv
 from nornir import InitNornir
 
@@ -8,7 +7,7 @@ from nornir import InitNornir
 load_dotenv()
 
 # Set the path to the Nornir config file
-NORNIR_CONFIG_FILE = f"{Path(__file__).parent.parent}\\nornir\\nr-config.yml"
+NORNIR_CONFIG_FILE = f"{Path(__file__).parent.parent.parent}\\nornir\\nr-config.yml"
 
 # Create a Nornir setup function
 def nornir_setup():

@@ -1,10 +1,17 @@
 ---
 host1:
-    hostname: 127.0.0.1
+    hostname: 192.168.99.158
     username: cisco
     password: cisco
-    port: 9000
-    device_type: cisco_ios_telnet
+    device_type: cisco_ios
+    platform: ios
+    global_delay_factor: 2
+
+host2:
+    hostname: 192.168.99.63
+    username: cisco
+    password: cisco
+    device_type: cisco_ios
     platform: ios
     global_delay_factor: 2
 

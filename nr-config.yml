@@ -1,10 +1,10 @@
 ---
 inventory:
-    plugin: SimpleInventory
+    plugin: NautobotInventory
     options:
-        host_file: "inventory/host.yml"
-        group_file: "inventory/group.yml"
-        defaults_file: "inventory/defaults.yml"
+        nautobot_url : https://192.168.128.15
+        nautobot_token : 1603955357328ffa4a08b6a7014dd866a2a8d5ba
+        ssl_verify: False
 
 runner:
     plugin: threaded
