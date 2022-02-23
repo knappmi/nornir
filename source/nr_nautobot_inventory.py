@@ -1,7 +1,5 @@
 
 from nornir import InitNornir
-from nornir.core.task import Task, Result
-from nornir_utils.plugins.functions import print_result
 
 def getInventory():
     nb_inv = InitNornir(
