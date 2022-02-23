@@ -727,3 +727,4 @@ Traceback (most recent call last):
 nornir.core.exceptions.NornirSubTaskError: Subtask: napalm_get (failed)
 
 
+2022-02-22 22:37:13,782 -  nornir.core -     INFO -        run() - Running task 'Backup Device configurations' with args {'path': './data/configs'} on 2 hosts
