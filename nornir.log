@@ -729,3 +729,690 @@ nornir.core.exceptions.NornirSubTaskError: Subtask: napalm_get (failed)
 
 2022-02-22 22:37:13,782 -  nornir.core -     INFO -        run() - Running task 'Backup Device configurations' with args {'path': './data/configs'} on 2 hosts
 2022-02-22 22:38:38,574 -  nornir.core -     INFO -        run() - Running task 'Backup Device configurations' with args {'path': './data/configs'} on 2 hosts
+2022-02-23 09:21:58,514 -  nornir.core -     INFO -        run() - Running task 'Backup Device configurations' with args {'path': './data/configs'} on 2 hosts
+2022-02-23 09:54:48,753 -  nornir.core -     INFO -        run() - Running task 'Build Tunnels' with args {'ep1': '192.168.99.158', 'ep2': '192.168.99.63'} on 2 hosts
+2022-02-23 09:55:38,260 -  nornir.core -     INFO -        run() - Running task 'Backup Device configurations' with args {'path': './data/configs'} on 2 hosts
+2022-02-23 09:59:38,213 -  nornir.core -     INFO -        run() - Running task 'Build Tunnels' with args {'ep1': '192.168.99.158', 'ep2': '192.168.99.63'} on 2 hosts
+2022-02-23 10:00:16,302 -  nornir.core -     INFO -        run() - Running task 'Build Tunnels' with args {'ep1': '192.168.99.158', 'ep2': '192.168.99.63'} on 2 hosts
+2022-02-23 10:00:16,305 - nornir.core.task -    ERROR -      start() - Host 'CSR1000V-JCU-TEST3': task 'Build Tunnels' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Roaming\Python\Python310\site-packages\nornir\core\task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "c:\Users\Admin\Documents\Code\Nornir\nornir\source\tunnel_build.py", line 13, in buildTunnel
+    cliInput = task.run(task=napalm_cli, commands=['int tunnel15',f'ip address 10.0.0.{x} 255.255.255.252','no shut','ip route 10.0.0.0 255.255.255.252'])
+NameError: name 'x' is not defined
+
+2022-02-23 10:00:16,305 - nornir.core.task -    ERROR -      start() - Host 'CSR1000V-JCU-TEST4': task 'Build Tunnels' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Roaming\Python\Python310\site-packages\nornir\core\task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "c:\Users\Admin\Documents\Code\Nornir\nornir\source\tunnel_build.py", line 13, in buildTunnel
+    cliInput = task.run(task=napalm_cli, commands=['int tunnel15',f'ip address 10.0.0.{x} 255.255.255.252','no shut','ip route 10.0.0.0 255.255.255.252'])
+NameError: name 'x' is not defined
+
+2022-02-23 10:00:28,724 -  nornir.core -     INFO -        run() - Running task 'Build Tunnels' with args {'ep1': '192.168.99.158', 'ep2': '192.168.99.63'} on 2 hosts
+2022-02-23 10:05:45,979 -  nornir.core -     INFO -        run() - Running task 'Build Tunnels' with args {'ep1': '192.168.99.158', 'ep2': '192.168.99.63'} on 2 hosts
+2022-02-23 10:07:18,309 -  nornir.core -     INFO -        run() - Running task 'Build Tunnels' with args {'ep1': '192.168.99.158', 'ep2': '192.168.99.63'} on 2 hosts
+2022-02-23 10:13:15,533 -  nornir.core -     INFO -        run() - Running task 'Build Tunnels' with args {'ep1': '192.168.99.158', 'ep2': '192.168.99.63'} on 2 hosts
+2022-02-23 10:13:55,416 -  nornir.core -     INFO -        run() - Running task 'Build Tunnels' with args {'ep1': '192.168.99.158', 'ep2': '192.168.99.63'} on 2 hosts
+2022-02-23 10:15:42,515 -  nornir.core -     INFO -        run() - Running task 'Build Tunnels' with args {'ep1': '192.168.99.158', 'ep2': '192.168.99.63'} on 2 hosts
+2022-02-23 10:19:50,698 -  nornir.core -     INFO -        run() - Running task 'Build Tunnels' with args {'ep1': '192.168.99.158', 'ep2': '192.168.99.63'} on 2 hosts
+2022-02-23 10:20:11,907 - nornir.core.task -    ERROR -      start() - Host 'CSR1000V-JCU-TEST3': task 'napalm_cli' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Roaming\Python\Python310\site-packages\napalm\ios\ios.py", line 205, in _send_command
+    output = self.device.send_command(command)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python310\site-packages\netmiko\utilities.py", line 500, in wrapper_decorator
+    return func(self, *args, **kwargs)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python310\site-packages\netmiko\base_connection.py", line 1535, in send_command
+    raise IOError(
+OSError: Search pattern never detected in send_command: B\-KL004\-H\-R\#
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Roaming\Python\Python310\site-packages\nornir\core\task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python310\site-packages\nornir_napalm\plugins\tasks\napalm_cli.py", line 20, in napalm_cli
+    result = device.cli(commands)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python310\site-packages\napalm\ios\ios.py", line 2372, in cli
+    output = self._send_command(command)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python310\site-packages\napalm\ios\ios.py", line 208, in _send_command
+    raise ConnectionClosedException(str(e))
+napalm.base.exceptions.ConnectionClosedException: Search pattern never detected in send_command: B\-KL004\-H\-R\#
+
+2022-02-23 10:20:11,907 - nornir.core.task -    ERROR -      start() - Host 'CSR1000V-JCU-TEST3': task 'Build Tunnels' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Roaming\Python\Python310\site-packages\nornir\core\task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "c:\Users\Admin\Documents\Code\Nornir\nornir\source\tunnel_build.py", line 14, in buildTunnel
+    cliInput = task.run(napalm_cli, commands=['config t','int tunnel15',f'ip address 10.0.0.{x} 255.255.255.252','no shut','ip route 10.0.0.0 255.255.255.252'])
+  File "C:\Users\Admin\AppData\Roaming\Python\Python310\site-packages\nornir\core\task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: napalm_cli (failed)
+
+
+2022-02-23 10:20:12,924 - nornir.core.task -    ERROR -      start() - Host 'CSR1000V-JCU-TEST4': task 'napalm_cli' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Roaming\Python\Python310\site-packages\napalm\ios\ios.py", line 205, in _send_command
+    output = self.device.send_command(command)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python310\site-packages\netmiko\utilities.py", line 500, in wrapper_decorator
+    return func(self, *args, **kwargs)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python310\site-packages\netmiko\base_connection.py", line 1535, in send_command
+    raise IOError(
+OSError: Search pattern never detected in send_command: CSR1000V\-JCU\-TEST4\#
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Roaming\Python\Python310\site-packages\nornir\core\task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python310\site-packages\nornir_napalm\plugins\tasks\napalm_cli.py", line 20, in napalm_cli
+    result = device.cli(commands)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python310\site-packages\napalm\ios\ios.py", line 2372, in cli
+    output = self._send_command(command)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python310\site-packages\napalm\ios\ios.py", line 208, in _send_command
+    raise ConnectionClosedException(str(e))
+napalm.base.exceptions.ConnectionClosedException: Search pattern never detected in send_command: CSR1000V\-JCU\-TEST4\#
+
+2022-02-23 10:20:12,924 - nornir.core.task -    ERROR -      start() - Host 'CSR1000V-JCU-TEST4': task 'Build Tunnels' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Roaming\Python\Python310\site-packages\nornir\core\task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "c:\Users\Admin\Documents\Code\Nornir\nornir\source\tunnel_build.py", line 14, in buildTunnel
+    cliInput = task.run(napalm_cli, commands=['config t','int tunnel15',f'ip address 10.0.0.{x} 255.255.255.252','no shut','ip route 10.0.0.0 255.255.255.252'])
+  File "C:\Users\Admin\AppData\Roaming\Python\Python310\site-packages\nornir\core\task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: napalm_cli (failed)
+
+
+2022-02-23 10:22:15,374 -  nornir.core -     INFO -        run() - Running task 'Build Tunnels' with args {'ep1': '192.168.99.158', 'ep2': '192.168.99.63'} on 2 hosts
+2022-02-23 10:22:36,059 - nornir.core.task -    ERROR -      start() - Host 'CSR1000V-JCU-TEST3': task 'napalm_cli' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Roaming\Python\Python310\site-packages\napalm\ios\ios.py", line 205, in _send_command
+    output = self.device.send_command(command)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python310\site-packages\netmiko\utilities.py", line 500, in wrapper_decorator
+    return func(self, *args, **kwargs)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python310\site-packages\netmiko\base_connection.py", line 1535, in send_command
+    raise IOError(
+OSError: Search pattern never detected in send_command: B\-KL004\-H\-R\#
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Roaming\Python\Python310\site-packages\nornir\core\task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python310\site-packages\nornir_napalm\plugins\tasks\napalm_cli.py", line 20, in napalm_cli
+    result = device.cli(commands)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python310\site-packages\napalm\ios\ios.py", line 2372, in cli
+    output = self._send_command(command)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python310\site-packages\napalm\ios\ios.py", line 208, in _send_command
+    raise ConnectionClosedException(str(e))
+napalm.base.exceptions.ConnectionClosedException: Search pattern never detected in send_command: B\-KL004\-H\-R\#
+
+2022-02-23 10:22:36,060 - nornir.core.task -    ERROR -      start() - Host 'CSR1000V-JCU-TEST3': task 'Build Tunnels' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Roaming\Python\Python310\site-packages\nornir\core\task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "c:\Users\Admin\Documents\Code\Nornir\nornir\source\tunnel_build.py", line 14, in buildTunnel
+    cliInput = task.run(napalm_cli, commands=['config t','int tunnel15',f'ip address 10.0.0.{x} 255.255.255.252','no shut','ip route 10.0.0.0 255.255.255.252'])
+  File "C:\Users\Admin\AppData\Roaming\Python\Python310\site-packages\nornir\core\task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: napalm_cli (failed)
+
+
+2022-02-23 10:22:36,375 - nornir.core.task -    ERROR -      start() - Host 'CSR1000V-JCU-TEST4': task 'napalm_cli' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Roaming\Python\Python310\site-packages\napalm\ios\ios.py", line 205, in _send_command
+    output = self.device.send_command(command)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python310\site-packages\netmiko\utilities.py", line 500, in wrapper_decorator
+    return func(self, *args, **kwargs)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python310\site-packages\netmiko\base_connection.py", line 1535, in send_command
+    raise IOError(
+OSError: Search pattern never detected in send_command: CSR1000V\-JCU\-TEST4\#
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Roaming\Python\Python310\site-packages\nornir\core\task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python310\site-packages\nornir_napalm\plugins\tasks\napalm_cli.py", line 20, in napalm_cli
+    result = device.cli(commands)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python310\site-packages\napalm\ios\ios.py", line 2372, in cli
+    output = self._send_command(command)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python310\site-packages\napalm\ios\ios.py", line 208, in _send_command
+    raise ConnectionClosedException(str(e))
+napalm.base.exceptions.ConnectionClosedException: Search pattern never detected in send_command: CSR1000V\-JCU\-TEST4\#
+
+2022-02-23 10:22:36,375 - nornir.core.task -    ERROR -      start() - Host 'CSR1000V-JCU-TEST4': task 'Build Tunnels' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Roaming\Python\Python310\site-packages\nornir\core\task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "c:\Users\Admin\Documents\Code\Nornir\nornir\source\tunnel_build.py", line 14, in buildTunnel
+    cliInput = task.run(napalm_cli, commands=['config t','int tunnel15',f'ip address 10.0.0.{x} 255.255.255.252','no shut','ip route 10.0.0.0 255.255.255.252'])
+  File "C:\Users\Admin\AppData\Roaming\Python\Python310\site-packages\nornir\core\task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: napalm_cli (failed)
+
+
+2022-02-23 10:23:30,929 -  nornir.core -     INFO -        run() - Running task 'Build Tunnels' with args {'ep1': '192.168.99.158', 'ep2': '192.168.99.63'} on 2 hosts
+2022-02-23 10:25:30,649 -  nornir.core -     INFO -        run() - Running task 'Build Tunnels' with args {'ep1': '192.168.99.158', 'ep2': '192.168.99.63'} on 2 hosts
+2022-02-23 10:26:12,195 -  nornir.core -     INFO -        run() - Running task 'Build Tunnels' with args {'ep1': '192.168.99.158', 'ep2': '192.168.99.63'} on 2 hosts
+2022-02-23 10:30:06,464 - nornir.core.task -    ERROR -      start() - Host 'CSR1000V-JCU-TEST4': task 'napalm_cli' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Roaming\Python\Python310\site-packages\napalm\ios\ios.py", line 205, in _send_command
+    output = self.device.send_command(command)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python310\site-packages\netmiko\utilities.py", line 500, in wrapper_decorator
+    return func(self, *args, **kwargs)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python310\site-packages\netmiko\base_connection.py", line 1535, in send_command
+    raise IOError(
+OSError: Search pattern never detected in send_command: CSR1000V\-JCU\-TEST4\#
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Roaming\Python\Python310\site-packages\nornir\core\task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python310\site-packages\nornir_napalm\plugins\tasks\napalm_cli.py", line 20, in napalm_cli
+    result = device.cli(commands)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python310\site-packages\napalm\ios\ios.py", line 2372, in cli
+    output = self._send_command(command)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python310\site-packages\napalm\ios\ios.py", line 208, in _send_command
+    raise ConnectionClosedException(str(e))
+napalm.base.exceptions.ConnectionClosedException: Search pattern never detected in send_command: CSR1000V\-JCU\-TEST4\#
+
+2022-02-23 10:30:06,816 - nornir.core.task -    ERROR -      start() - Host 'CSR1000V-JCU-TEST3': task 'napalm_cli' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Roaming\Python\Python310\site-packages\napalm\ios\ios.py", line 205, in _send_command
+    output = self.device.send_command(command)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python310\site-packages\netmiko\utilities.py", line 500, in wrapper_decorator
+    return func(self, *args, **kwargs)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python310\site-packages\netmiko\base_connection.py", line 1535, in send_command
+    raise IOError(
+OSError: Search pattern never detected in send_command: B\-KL004\-H\-R\#
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Roaming\Python\Python310\site-packages\nornir\core\task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python310\site-packages\nornir_napalm\plugins\tasks\napalm_cli.py", line 20, in napalm_cli
+    result = device.cli(commands)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python310\site-packages\napalm\ios\ios.py", line 2372, in cli
+    output = self._send_command(command)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python310\site-packages\napalm\ios\ios.py", line 208, in _send_command
+    raise ConnectionClosedException(str(e))
+napalm.base.exceptions.ConnectionClosedException: Search pattern never detected in send_command: B\-KL004\-H\-R\#
+
+2022-02-23 10:35:19,466 -  nornir.core -     INFO -        run() - Running task 'Build Tunnels' with args {'ep1': '192.168.99.158', 'ep2': '192.168.99.63'} on 2 hosts
+2022-02-23 10:35:40,489 - nornir.core.task -    ERROR -      start() - Host 'CSR1000V-JCU-TEST4': task 'napalm_cli' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Roaming\Python\Python310\site-packages\napalm\ios\ios.py", line 205, in _send_command
+    output = self.device.send_command(command)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python310\site-packages\netmiko\utilities.py", line 500, in wrapper_decorator
+    return func(self, *args, **kwargs)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python310\site-packages\netmiko\base_connection.py", line 1535, in send_command
+    raise IOError(
+OSError: Search pattern never detected in send_command: CSR1000V\-JCU\-TEST4\#
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Roaming\Python\Python310\site-packages\nornir\core\task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python310\site-packages\nornir_napalm\plugins\tasks\napalm_cli.py", line 20, in napalm_cli
+    result = device.cli(commands)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python310\site-packages\napalm\ios\ios.py", line 2372, in cli
+    output = self._send_command(command)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python310\site-packages\napalm\ios\ios.py", line 208, in _send_command
+    raise ConnectionClosedException(str(e))
+napalm.base.exceptions.ConnectionClosedException: Search pattern never detected in send_command: CSR1000V\-JCU\-TEST4\#
+
+2022-02-23 10:35:40,489 - nornir.core.task -    ERROR -      start() - Host 'CSR1000V-JCU-TEST4': task 'Build Tunnels' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Roaming\Python\Python310\site-packages\nornir\core\task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "c:\Users\Admin\Documents\Code\Nornir\nornir\source\tunnel_build.py", line 14, in buildTunnel
+    cliInput = task.run(napalm_cli, commands=['config t','int tunnel15',f'ip address 10.0.0.{x} 255.255.255.252','no shut','ip route 10.0.0.0 255.255.255.252'])
+  File "C:\Users\Admin\AppData\Roaming\Python\Python310\site-packages\nornir\core\task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: napalm_cli (failed)
+
+
+2022-02-23 10:35:40,574 - nornir.core.task -    ERROR -      start() - Host 'CSR1000V-JCU-TEST3': task 'napalm_cli' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Roaming\Python\Python310\site-packages\napalm\ios\ios.py", line 205, in _send_command
+    output = self.device.send_command(command)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python310\site-packages\netmiko\utilities.py", line 500, in wrapper_decorator
+    return func(self, *args, **kwargs)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python310\site-packages\netmiko\base_connection.py", line 1535, in send_command
+    raise IOError(
+OSError: Search pattern never detected in send_command: B\-KL004\-H\-R\#
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Roaming\Python\Python310\site-packages\nornir\core\task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python310\site-packages\nornir_napalm\plugins\tasks\napalm_cli.py", line 20, in napalm_cli
+    result = device.cli(commands)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python310\site-packages\napalm\ios\ios.py", line 2372, in cli
+    output = self._send_command(command)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python310\site-packages\napalm\ios\ios.py", line 208, in _send_command
+    raise ConnectionClosedException(str(e))
+napalm.base.exceptions.ConnectionClosedException: Search pattern never detected in send_command: B\-KL004\-H\-R\#
+
+2022-02-23 10:35:40,574 - nornir.core.task -    ERROR -      start() - Host 'CSR1000V-JCU-TEST3': task 'Build Tunnels' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Roaming\Python\Python310\site-packages\nornir\core\task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "c:\Users\Admin\Documents\Code\Nornir\nornir\source\tunnel_build.py", line 14, in buildTunnel
+    cliInput = task.run(napalm_cli, commands=['config t','int tunnel15',f'ip address 10.0.0.{x} 255.255.255.252','no shut','ip route 10.0.0.0 255.255.255.252'])
+  File "C:\Users\Admin\AppData\Roaming\Python\Python310\site-packages\nornir\core\task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: napalm_cli (failed)
+
+
+2022-02-23 10:42:40,488 -  nornir.core -     INFO -        run() - Running task 'Build Tunnels' with args {'ep1': '192.168.99.158', 'ep2': '192.168.99.63'} on 2 hosts
+2022-02-23 10:43:02,884 - nornir.core.task -    ERROR -      start() - Host 'CSR1000V-JCU-TEST4': task 'napalm_cli' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Roaming\Python\Python310\site-packages\paramiko\channel.py", line 699, in recv
+    out = self.in_buffer.read(nbytes, self.timeout)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python310\site-packages\paramiko\buffered_pipe.py", line 164, in read
+    raise PipeTimeout()
+paramiko.buffered_pipe.PipeTimeout
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Roaming\Python\Python310\site-packages\netmiko\base_connection.py", line 573, in _read_channel_expect
+    new_data = self.remote_conn.recv(MAX_BUFFER)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python310\site-packages\paramiko\channel.py", line 701, in recv
+    raise socket.timeout()
+TimeoutError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Roaming\Python\Python310\site-packages\nornir\core\task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python310\site-packages\nornir_napalm\plugins\tasks\napalm_cli.py", line 20, in napalm_cli
+    result = device.cli(commands)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python310\site-packages\napalm\ios\ios.py", line 2372, in cli
+    output = self._send_command(command)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python310\site-packages\napalm\ios\ios.py", line 205, in _send_command
+    output = self.device.send_command(command)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python310\site-packages\netmiko\utilities.py", line 500, in wrapper_decorator
+    return func(self, *args, **kwargs)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python310\site-packages\netmiko\base_connection.py", line 1496, in send_command
+    new_data = self.read_until_pattern(pattern=re.escape(cmd))
+  File "C:\Users\Admin\AppData\Roaming\Python\Python310\site-packages\netmiko\base_connection.py", line 655, in read_until_pattern
+    return self._read_channel_expect(*args, **kwargs)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python310\site-packages\netmiko\base_connection.py", line 583, in _read_channel_expect
+    raise NetmikoTimeoutException(
+netmiko.ssh_exception.NetmikoTimeoutException: Timed-out reading channel, data not available.
+
+2022-02-23 10:43:02,884 - nornir.core.task -    ERROR -      start() - Host 'CSR1000V-JCU-TEST4': task 'Build Tunnels' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Roaming\Python\Python310\site-packages\nornir\core\task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "c:\Users\Admin\Documents\Code\Nornir\nornir\source\tunnel_build.py", line 14, in buildTunnel
+    cliInput = task.run(napalm_cli, commands=[f'config t\nint tunnel15\nip address 10.0.0.{x} 255.255.255.252\nno shut\nip route 10.0.0.0 255.255.255.252'])
+  File "C:\Users\Admin\AppData\Roaming\Python\Python310\site-packages\nornir\core\task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: napalm_cli (failed)
+
+
+2022-02-23 10:43:03,005 - nornir.core.task -    ERROR -      start() - Host 'CSR1000V-JCU-TEST3': task 'napalm_cli' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Roaming\Python\Python310\site-packages\paramiko\channel.py", line 699, in recv
+    out = self.in_buffer.read(nbytes, self.timeout)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python310\site-packages\paramiko\buffered_pipe.py", line 164, in read
+    raise PipeTimeout()
+paramiko.buffered_pipe.PipeTimeout
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Roaming\Python\Python310\site-packages\netmiko\base_connection.py", line 573, in _read_channel_expect
+    new_data = self.remote_conn.recv(MAX_BUFFER)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python310\site-packages\paramiko\channel.py", line 701, in recv
+    raise socket.timeout()
+TimeoutError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Roaming\Python\Python310\site-packages\nornir\core\task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python310\site-packages\nornir_napalm\plugins\tasks\napalm_cli.py", line 20, in napalm_cli
+    result = device.cli(commands)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python310\site-packages\napalm\ios\ios.py", line 2372, in cli
+    output = self._send_command(command)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python310\site-packages\napalm\ios\ios.py", line 205, in _send_command
+    output = self.device.send_command(command)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python310\site-packages\netmiko\utilities.py", line 500, in wrapper_decorator
+    return func(self, *args, **kwargs)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python310\site-packages\netmiko\base_connection.py", line 1496, in send_command
+    new_data = self.read_until_pattern(pattern=re.escape(cmd))
+  File "C:\Users\Admin\AppData\Roaming\Python\Python310\site-packages\netmiko\base_connection.py", line 655, in read_until_pattern
+    return self._read_channel_expect(*args, **kwargs)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python310\site-packages\netmiko\base_connection.py", line 583, in _read_channel_expect
+    raise NetmikoTimeoutException(
+netmiko.ssh_exception.NetmikoTimeoutException: Timed-out reading channel, data not available.
+
+2022-02-23 10:43:03,005 - nornir.core.task -    ERROR -      start() - Host 'CSR1000V-JCU-TEST3': task 'Build Tunnels' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Roaming\Python\Python310\site-packages\nornir\core\task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "c:\Users\Admin\Documents\Code\Nornir\nornir\source\tunnel_build.py", line 14, in buildTunnel
+    cliInput = task.run(napalm_cli, commands=[f'config t\nint tunnel15\nip address 10.0.0.{x} 255.255.255.252\nno shut\nip route 10.0.0.0 255.255.255.252'])
+  File "C:\Users\Admin\AppData\Roaming\Python\Python310\site-packages\nornir\core\task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: napalm_cli (failed)
+
+
+2022-02-23 10:44:27,908 -  nornir.core -     INFO -        run() - Running task 'Build Tunnels' with args {'ep1': '192.168.99.158', 'ep2': '192.168.99.63'} on 2 hosts
+2022-02-23 10:44:50,265 - nornir.core.task -    ERROR -      start() - Host 'CSR1000V-JCU-TEST4': task 'napalm_cli' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Roaming\Python\Python310\site-packages\paramiko\channel.py", line 699, in recv
+    out = self.in_buffer.read(nbytes, self.timeout)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python310\site-packages\paramiko\buffered_pipe.py", line 164, in read
+    raise PipeTimeout()
+paramiko.buffered_pipe.PipeTimeout
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Roaming\Python\Python310\site-packages\netmiko\base_connection.py", line 573, in _read_channel_expect
+    new_data = self.remote_conn.recv(MAX_BUFFER)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python310\site-packages\paramiko\channel.py", line 701, in recv
+    raise socket.timeout()
+TimeoutError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Roaming\Python\Python310\site-packages\nornir\core\task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python310\site-packages\nornir_napalm\plugins\tasks\napalm_cli.py", line 20, in napalm_cli
+    result = device.cli(commands)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python310\site-packages\napalm\ios\ios.py", line 2372, in cli
+    output = self._send_command(command)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python310\site-packages\napalm\ios\ios.py", line 205, in _send_command
+    output = self.device.send_command(command)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python310\site-packages\netmiko\utilities.py", line 500, in wrapper_decorator
+    return func(self, *args, **kwargs)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python310\site-packages\netmiko\base_connection.py", line 1496, in send_command
+    new_data = self.read_until_pattern(pattern=re.escape(cmd))
+  File "C:\Users\Admin\AppData\Roaming\Python\Python310\site-packages\netmiko\base_connection.py", line 655, in read_until_pattern
+    return self._read_channel_expect(*args, **kwargs)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python310\site-packages\netmiko\base_connection.py", line 583, in _read_channel_expect
+    raise NetmikoTimeoutException(
+netmiko.ssh_exception.NetmikoTimeoutException: Timed-out reading channel, data not available.
+
+2022-02-23 10:44:50,265 - nornir.core.task -    ERROR -      start() - Host 'CSR1000V-JCU-TEST4': task 'Build Tunnels' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Roaming\Python\Python310\site-packages\nornir\core\task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "c:\Users\Admin\Documents\Code\Nornir\nornir\source\tunnel_build.py", line 14, in buildTunnel
+    cliInput = task.run(napalm_cli, commands=[f'config t\nint tunnel15\nip address 10.0.0.{x} 255.255.255.252\nno shut\nexit\nip route 10.0.0.0 255.255.255.252'])
+  File "C:\Users\Admin\AppData\Roaming\Python\Python310\site-packages\nornir\core\task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: napalm_cli (failed)
+
+
+2022-02-23 10:44:50,395 - nornir.core.task -    ERROR -      start() - Host 'CSR1000V-JCU-TEST3': task 'napalm_cli' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Roaming\Python\Python310\site-packages\paramiko\channel.py", line 699, in recv
+    out = self.in_buffer.read(nbytes, self.timeout)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python310\site-packages\paramiko\buffered_pipe.py", line 164, in read
+    raise PipeTimeout()
+paramiko.buffered_pipe.PipeTimeout
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Roaming\Python\Python310\site-packages\netmiko\base_connection.py", line 573, in _read_channel_expect
+    new_data = self.remote_conn.recv(MAX_BUFFER)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python310\site-packages\paramiko\channel.py", line 701, in recv
+    raise socket.timeout()
+TimeoutError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Roaming\Python\Python310\site-packages\nornir\core\task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python310\site-packages\nornir_napalm\plugins\tasks\napalm_cli.py", line 20, in napalm_cli
+    result = device.cli(commands)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python310\site-packages\napalm\ios\ios.py", line 2372, in cli
+    output = self._send_command(command)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python310\site-packages\napalm\ios\ios.py", line 205, in _send_command
+    output = self.device.send_command(command)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python310\site-packages\netmiko\utilities.py", line 500, in wrapper_decorator
+    return func(self, *args, **kwargs)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python310\site-packages\netmiko\base_connection.py", line 1496, in send_command
+    new_data = self.read_until_pattern(pattern=re.escape(cmd))
+  File "C:\Users\Admin\AppData\Roaming\Python\Python310\site-packages\netmiko\base_connection.py", line 655, in read_until_pattern
+    return self._read_channel_expect(*args, **kwargs)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python310\site-packages\netmiko\base_connection.py", line 583, in _read_channel_expect
+    raise NetmikoTimeoutException(
+netmiko.ssh_exception.NetmikoTimeoutException: Timed-out reading channel, data not available.
+
+2022-02-23 10:44:50,395 - nornir.core.task -    ERROR -      start() - Host 'CSR1000V-JCU-TEST3': task 'Build Tunnels' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Roaming\Python\Python310\site-packages\nornir\core\task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "c:\Users\Admin\Documents\Code\Nornir\nornir\source\tunnel_build.py", line 14, in buildTunnel
+    cliInput = task.run(napalm_cli, commands=[f'config t\nint tunnel15\nip address 10.0.0.{x} 255.255.255.252\nno shut\nexit\nip route 10.0.0.0 255.255.255.252'])
+  File "C:\Users\Admin\AppData\Roaming\Python\Python310\site-packages\nornir\core\task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: napalm_cli (failed)
+
+
+2022-02-23 10:45:37,083 -  nornir.core -     INFO -        run() - Running task 'Build Tunnels' with args {'ep1': '192.168.99.158', 'ep2': '192.168.99.63'} on 2 hosts
+2022-02-23 10:45:59,421 - nornir.core.task -    ERROR -      start() - Host 'CSR1000V-JCU-TEST4': task 'napalm_cli' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Roaming\Python\Python310\site-packages\paramiko\channel.py", line 699, in recv
+    out = self.in_buffer.read(nbytes, self.timeout)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python310\site-packages\paramiko\buffered_pipe.py", line 164, in read
+    raise PipeTimeout()
+paramiko.buffered_pipe.PipeTimeout
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Roaming\Python\Python310\site-packages\netmiko\base_connection.py", line 573, in _read_channel_expect
+    new_data = self.remote_conn.recv(MAX_BUFFER)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python310\site-packages\paramiko\channel.py", line 701, in recv
+    raise socket.timeout()
+TimeoutError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Roaming\Python\Python310\site-packages\nornir\core\task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python310\site-packages\nornir_napalm\plugins\tasks\napalm_cli.py", line 20, in napalm_cli
+    result = device.cli(commands)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python310\site-packages\napalm\ios\ios.py", line 2372, in cli
+    output = self._send_command(command)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python310\site-packages\napalm\ios\ios.py", line 205, in _send_command
+    output = self.device.send_command(command)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python310\site-packages\netmiko\utilities.py", line 500, in wrapper_decorator
+    return func(self, *args, **kwargs)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python310\site-packages\netmiko\base_connection.py", line 1496, in send_command
+    new_data = self.read_until_pattern(pattern=re.escape(cmd))
+  File "C:\Users\Admin\AppData\Roaming\Python\Python310\site-packages\netmiko\base_connection.py", line 655, in read_until_pattern
+    return self._read_channel_expect(*args, **kwargs)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python310\site-packages\netmiko\base_connection.py", line 583, in _read_channel_expect
+    raise NetmikoTimeoutException(
+netmiko.ssh_exception.NetmikoTimeoutException: Timed-out reading channel, data not available.
+
+2022-02-23 10:45:59,422 - nornir.core.task -    ERROR -      start() - Host 'CSR1000V-JCU-TEST4': task 'Build Tunnels' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Roaming\Python\Python310\site-packages\nornir\core\task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "c:\Users\Admin\Documents\Code\Nornir\nornir\source\tunnel_build.py", line 14, in buildTunnel
+    cliInput = task.run(napalm_cli, commands=[f'config t\nint tunnel15\nip address 10.0.0.{x} 255.255.255.252\nno shut\nexit\nip route 10.0.0.0 255.255.255.252 tunnel15'])
+  File "C:\Users\Admin\AppData\Roaming\Python\Python310\site-packages\nornir\core\task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: napalm_cli (failed)
+
+
+2022-02-23 10:45:59,585 - nornir.core.task -    ERROR -      start() - Host 'CSR1000V-JCU-TEST3': task 'napalm_cli' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Roaming\Python\Python310\site-packages\paramiko\channel.py", line 699, in recv
+    out = self.in_buffer.read(nbytes, self.timeout)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python310\site-packages\paramiko\buffered_pipe.py", line 164, in read
+    raise PipeTimeout()
+paramiko.buffered_pipe.PipeTimeout
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Roaming\Python\Python310\site-packages\netmiko\base_connection.py", line 573, in _read_channel_expect
+    new_data = self.remote_conn.recv(MAX_BUFFER)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python310\site-packages\paramiko\channel.py", line 701, in recv
+    raise socket.timeout()
+TimeoutError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Roaming\Python\Python310\site-packages\nornir\core\task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python310\site-packages\nornir_napalm\plugins\tasks\napalm_cli.py", line 20, in napalm_cli
+    result = device.cli(commands)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python310\site-packages\napalm\ios\ios.py", line 2372, in cli
+    output = self._send_command(command)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python310\site-packages\napalm\ios\ios.py", line 205, in _send_command
+    output = self.device.send_command(command)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python310\site-packages\netmiko\utilities.py", line 500, in wrapper_decorator
+    return func(self, *args, **kwargs)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python310\site-packages\netmiko\base_connection.py", line 1496, in send_command
+    new_data = self.read_until_pattern(pattern=re.escape(cmd))
+  File "C:\Users\Admin\AppData\Roaming\Python\Python310\site-packages\netmiko\base_connection.py", line 655, in read_until_pattern
+    return self._read_channel_expect(*args, **kwargs)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python310\site-packages\netmiko\base_connection.py", line 583, in _read_channel_expect
+    raise NetmikoTimeoutException(
+netmiko.ssh_exception.NetmikoTimeoutException: Timed-out reading channel, data not available.
+
+2022-02-23 10:45:59,586 - nornir.core.task -    ERROR -      start() - Host 'CSR1000V-JCU-TEST3': task 'Build Tunnels' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Roaming\Python\Python310\site-packages\nornir\core\task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "c:\Users\Admin\Documents\Code\Nornir\nornir\source\tunnel_build.py", line 14, in buildTunnel
+    cliInput = task.run(napalm_cli, commands=[f'config t\nint tunnel15\nip address 10.0.0.{x} 255.255.255.252\nno shut\nexit\nip route 10.0.0.0 255.255.255.252 tunnel15'])
+  File "C:\Users\Admin\AppData\Roaming\Python\Python310\site-packages\nornir\core\task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: napalm_cli (failed)
+
+
+2022-02-23 10:58:10,337 -  nornir.core -     INFO -        run() - Running task 'Build Tunnels' with args {'ep1': '192.168.99.158', 'ep2': '192.168.99.63'} on 2 hosts
+2022-02-23 10:58:10,337 - nornir.core.task -    ERROR -      start() - Host 'CSR1000V-JCU-TEST3': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Roaming\Python\Python310\site-packages\nornir\core\task.py", line 99, in start
+    r = self.task(self, **self.params)
+TypeError: netmiko_send_command() missing 1 required positional argument: 'command_string'
+
+2022-02-23 10:58:10,337 - nornir.core.task -    ERROR -      start() - Host 'CSR1000V-JCU-TEST4': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Roaming\Python\Python310\site-packages\nornir\core\task.py", line 99, in start
+    r = self.task(self, **self.params)
+TypeError: netmiko_send_command() missing 1 required positional argument: 'command_string'
+
+2022-02-23 10:58:10,337 - nornir.core.task -    ERROR -      start() - Host 'CSR1000V-JCU-TEST3': task 'Build Tunnels' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Roaming\Python\Python310\site-packages\nornir\core\task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "c:\Users\Admin\Documents\Code\Nornir\nornir\source\tunnel_build.py", line 16, in buildTunnel
+    cliInput = task.run(netmiko_send_command, config_commands=tunnel_config)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python310\site-packages\nornir\core\task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_command (failed)
+
+
+2022-02-23 10:58:10,337 - nornir.core.task -    ERROR -      start() - Host 'CSR1000V-JCU-TEST4': task 'Build Tunnels' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Roaming\Python\Python310\site-packages\nornir\core\task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "c:\Users\Admin\Documents\Code\Nornir\nornir\source\tunnel_build.py", line 16, in buildTunnel
+    cliInput = task.run(netmiko_send_command, config_commands=tunnel_config)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python310\site-packages\nornir\core\task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_command (failed)
+
+
+2022-02-23 11:00:10,517 -  nornir.core -     INFO -        run() - Running task 'Build Tunnels' with args {'ep1': '192.168.99.158', 'ep2': '192.168.99.63'} on 2 hosts
+2022-02-23 11:00:12,370 - nornir.core.task -    ERROR -      start() - Host 'CSR1000V-JCU-TEST4': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Roaming\Python\Python310\site-packages\nornir\core\task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python310\site-packages\nornir_netmiko\tasks\netmiko_send_command.py", line 32, in netmiko_send_command
+    result = net_connect.send_command(command_string, **kwargs)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python310\site-packages\netmiko\utilities.py", line 500, in wrapper_decorator
+    return func(self, *args, **kwargs)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python310\site-packages\netmiko\base_connection.py", line 1485, in send_command
+    command_string = self.normalize_cmd(command_string)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python310\site-packages\netmiko\base_connection.py", line 1644, in normalize_cmd
+    command = command.rstrip()
+AttributeError: 'list' object has no attribute 'rstrip'
+
+2022-02-23 11:00:12,370 - nornir.core.task -    ERROR -      start() - Host 'CSR1000V-JCU-TEST4': task 'Build Tunnels' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Roaming\Python\Python310\site-packages\nornir\core\task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "c:\Users\Admin\Documents\Code\Nornir\nornir\source\tunnel_build.py", line 16, in buildTunnel
+    cliInput = task.run(netmiko_send_command, command_string=tunnel_config)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python310\site-packages\nornir\core\task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_command (failed)
+
+
+2022-02-23 11:00:12,565 - nornir.core.task -    ERROR -      start() - Host 'CSR1000V-JCU-TEST3': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Roaming\Python\Python310\site-packages\nornir\core\task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python310\site-packages\nornir_netmiko\tasks\netmiko_send_command.py", line 32, in netmiko_send_command
+    result = net_connect.send_command(command_string, **kwargs)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python310\site-packages\netmiko\utilities.py", line 500, in wrapper_decorator
+    return func(self, *args, **kwargs)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python310\site-packages\netmiko\base_connection.py", line 1485, in send_command
+    command_string = self.normalize_cmd(command_string)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python310\site-packages\netmiko\base_connection.py", line 1644, in normalize_cmd
+    command = command.rstrip()
+AttributeError: 'list' object has no attribute 'rstrip'
+
+2022-02-23 11:00:12,565 - nornir.core.task -    ERROR -      start() - Host 'CSR1000V-JCU-TEST3': task 'Build Tunnels' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Roaming\Python\Python310\site-packages\nornir\core\task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "c:\Users\Admin\Documents\Code\Nornir\nornir\source\tunnel_build.py", line 16, in buildTunnel
+    cliInput = task.run(netmiko_send_command, command_string=tunnel_config)
+  File "C:\Users\Admin\AppData\Roaming\Python\Python310\site-packages\nornir\core\task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_command (failed)
+
+
+2022-02-23 11:01:50,995 -  nornir.core -     INFO -        run() - Running task 'Build Tunnels' with args {'ep1': '192.168.99.158', 'ep2': '192.168.99.63'} on 2 hosts
+2022-02-23 11:03:39,425 -  nornir.core -     INFO -        run() - Running task 'Build Tunnels' with args {'ep1': '192.168.99.158', 'ep2': '192.168.99.63'} on 2 hosts
+2022-02-23 11:05:23,745 -  nornir.core -     INFO -        run() - Running task 'Build Tunnels' with args {'ep1': '192.168.99.158', 'ep2': '192.168.99.63'} on 2 hosts
+2022-02-23 11:05:58,645 -  nornir.core -     INFO -        run() - Running task 'Build Tunnels' with args {'ep1': '192.168.99.158', 'ep2': '192.168.99.63'} on 2 hosts
+2022-02-23 11:08:41,326 -  nornir.core -     INFO -        run() - Running task 'Build Tunnels' with args {'ep1': '192.168.99.158', 'ep2': '192.168.99.63'} on 2 hosts
+2022-02-23 11:12:01,748 -  nornir.core -     INFO -        run() - Running task 'Build Tunnels' with args {'ep1': '192.168.99.158', 'ep2': '192.168.99.63'} on 2 hosts
+2022-02-23 11:23:14,106 -  nornir.core -     INFO -        run() - Running task 'Build Tunnels' with args {'ep1': '192.168.99.158', 'ep2': '192.168.99.63'} on 2 hosts
+2022-02-23 11:28:56,116 -  nornir.core -     INFO -        run() - Running task 'Build Tunnels' with args {'ep1': '192.168.99.158', 'ep2': '192.168.99.63'} on 2 hosts
+2022-02-23 11:49:15,603 -  nornir.core -     INFO -        run() - Running task 'Build Tunnels' with args {'ep1': '10.0.0.1', 'ep2': '10.0.0.2'} on 2 hosts
+2022-02-23 11:52:23,335 -  nornir.core -     INFO -        run() - Running task 'Build Tunnels' with args {'ep1': '10.0.0.1', 'ep2': '10.0.0.2'} on 2 hosts
+2022-02-23 11:59:27,911 -  nornir.core -     INFO -        run() - Running task 'Build Tunnels' with args {'ep': '10.0.0.1'} on 2 hosts
+2022-02-23 12:00:18,563 -  nornir.core -     INFO -        run() - Running task 'Build Tunnels' with args {'ep': '10.0.0.2'} on 2 hosts
+2022-02-23 12:18:00,056 -  nornir.core -     INFO -        run() - Running task 'Build Tunnels' with args {'ep': '10.0.0.1', 'dest': '10.0.0.2'} on 2 hosts
+2022-02-23 12:19:05,464 -  nornir.core -     INFO -        run() - Running task 'Build Tunnels' with args {'ep': '10.0.0.1', 'dest': '10.0.0.2'} on 2 hosts
+2022-02-23 12:55:10,928 -  nornir.core -     INFO -        run() - Running task 'Build Tunnels' with args {'ep': '10.0.0.2', 'dest': '10.0.0.1'} on 2 hosts
+2022-02-23 13:04:11,285 -  nornir.core -     INFO -        run() - Running task 'Build Tunnels' with args {'ep': '10.0.0.1', 'dest': '10.0.0.2'} on 2 hosts
+2022-02-23 13:12:15,813 -  nornir.core -     INFO -        run() - Running task 'Build Tunnels' with args {'ep': '10.0.0.1', 'dest': '10.0.0.2'} on 2 hosts
+2022-02-23 13:21:21,533 -  nornir.core -     INFO -        run() - Running task 'Build Tunnels' with args {'ep': '10.0.0.2', 'dest': '10.0.0.1'} on 2 hosts
+2022-02-23 13:24:29,069 -  nornir.core -     INFO -        run() - Running task 'Build Tunnels' with args {'ep': '10.0.0.2', 'dest': '10.0.0.1'} on 2 hosts
+2022-02-23 13:25:12,710 -  nornir.core -     INFO -        run() - Running task 'Build Tunnels' with args {'ep': '10.0.0.2', 'dest': '10.0.0.1'} on 2 hosts
+2022-02-23 13:43:27,918 -  nornir.core -  WARNING -        run() - Task 'Build Tunnels' has not been run – 0 hosts selected
