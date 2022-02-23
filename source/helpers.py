@@ -21,10 +21,6 @@ def nornir_setup():
     # Set the username and password using the environment variables
     nr.inventory.defaults.username = os.getenv("DEVICE_USERNAME")
     nr.inventory.defaults.password = os.getenv("DEVICE_PASSWORD")
-    # pp(nr.inventory.hosts['CSR1000V-JCU-TEST3'])
-    # pp(nr.filter(name="CSR1000V-JCU-TEST3").dict())
-    # pp(nr.dict())
-    
 
     return nr
 
@@ -44,5 +40,3 @@ def filterQuery(nr: Nornir, query_string:str):
         filters.append(ord_f_object)
     
     return nr.filter(reduce(and_, filters))
-
-nornir_setup()
