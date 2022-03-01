@@ -187,6 +187,13 @@ cdp run
 interface Loopback0
  ip address 3.3.3.3 255.255.255.255
 !
+interface Tunnel15
+ description Tunnel test 1
+ ip address 10.0.0.2 255.255.255.252
+ keepalive 10 3
+ tunnel source GigabitEthernet1
+ tunnel destination 192.168.99.158
+!
 interface GigabitEthernet1
  ip address 192.168.99.63 255.255.255.0
  negotiation auto
@@ -243,6 +250,8 @@ ip http secure-server
 !
 ip route 0.0.0.0 0.0.0.0 192.168.99.1
 ip route 0.0.0.0 255.255.255.255 GigabitEthernet1
+ip route 10.0.0.0 255.255.255.252 Tunnel15
+ip route 10.0.0.0 255.255.255.252 10.0.0.1
 ip route 192.168.99.0 255.255.255.0 GigabitEthernet1
 ip route 192.168.99.0 255.255.255.0 192.168.99.1
 ip ssh version 2
